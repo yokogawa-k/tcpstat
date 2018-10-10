@@ -10,6 +10,9 @@ func init() {
 }
 
 func main() {
+	startProfile()
 	cli := &CLI{outStream: os.Stdout, errStream: os.Stderr}
-	os.Exit(cli.Run(os.Args))
+    s := cli.Run(os.Args)
+	endProfile()
+	os.Exit(s)
 }
